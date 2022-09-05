@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!--Aclara al navegador que lo que vamos a pasar es html-->
+
+<meta charset = "UTF-8"> <!--Siempre para aclarar las acentuaciones y caracteres de lo que escribimos en al navegador-->
+
+<html lang="es">
+
+    <link rel="stylesheet" href="ahorcado-style.css">
+
+    <head>
+
+        <title>Juego del ahorcado</title>
+
+    </head>
+
+    <body>
+
+        <!--Fuente de la página-->
+        <div>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        </div>
+
+        <img class="logo-alura" src="Imagenes-pagina/Logo alura.png">
+
+        <!--Pagina Home-->
+        <div class="homePage">
+
+            <!--buttons-->
+            <button class="start-button">Start</button>
+            <button class="add-word-button">Add a new word</button>
+
+        </div>
+
+        <!--Add new word page-->
+        <div class="add-word-page">
+
+            <form class="insertTextForm">
+                <input class="encryptInput" type="text" required>
+                <label class="lbl-text">
+                    <span class="span-text">
+                        Insert text here
+                    </span>
+                </label>
+            </form>
+
+            <!--Buttons-->
+            <div>
+
+                <button class="saveButton">Save</button>
+                <button onclick="cleanInput()" class="cancelButton">Cancel</button>
+
+                <button class="beginButton">Begin</button>
+                <button class="goBackButton">Go back</button>
+            </div>
+
+            <!--Warning-->
+            <div>
+                <img class="warningLogo" src="Imagenes-pagina/Vector.png">
+                <p class="letterWarning">8 letter max.</p>
+            </div>
+
+        </div>
+
+        <script rel="scriptsheet" src="ahorcado-script.js"></script>
+
+    </body>
+
+</html> 

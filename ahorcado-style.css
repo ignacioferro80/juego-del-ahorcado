@@ -1,0 +1,315 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Alura logo*/
+.logo-alura{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+/*Home Page*/
+.homePage{
+    display:none;
+}
+
+/*Buttons*/
+.start-button{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 138px;
+    gap: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: white;
+    
+    width: 317px;
+    height: 114px;
+    margin:402px auto;
+    
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 24px;
+    border:none
+}
+
+.start-button:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #609ED4;
+
+    cursor:pointer;
+}
+
+.add-word-button{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 52px;
+    gap: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #0A3871;
+    
+    width: 254px;
+    height: 90px;
+    margin:-371px auto;
+    
+    /* Dark blue/dark-blue-300 */
+    background: #D8DFE8;
+    border-radius: 24px;
+}
+
+.add-word-button:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #F3F5FC;
+
+    cursor:pointer;
+}
+
+/*Add new word page*/
+
+/*input text*/
+.insertTextForm{
+    position: absolute;
+    width: 577px;
+    height: 47px;
+    left: 240px;
+    top: 168px;
+    overflow:hidden; 
+}
+
+.insertTextForm input{
+    width: 577px;
+
+    background: none; /*esconde el input*/
+    color:#609ED4;
+    padding-top: 20px;
+    border:none; /*esconde el input*/
+    outline:0;
+
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.insertTextForm .lbl-text{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 577px;
+    height: 52px;
+    pointer-events: none;
+    border-bottom: 1px solid #0A3871;
+
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.span-text{
+    position: flex;
+    bottom:5px;
+    left:0;
+    transition:all 0.3 ease;
+    
+    color:#0A3871;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+/*buttons*/
+.saveButton{
+    /*button*/
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 708px;
+    right: 872px;
+    bottom: 72px;
+    left: 532px;
+    width: 328px;
+    height: 67px;
+    background: #0A3871;
+    border-style:none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 24px;
+}
+
+.saveButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #609ED4;
+}
+
+.cancelButton{
+    /*button*/
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 708px;
+    right: 520px;
+    bottom: 72px;
+    left: 889px;
+    width: 328px;
+    height: 67px;
+    background: #D8DFE8;
+    border-radius: 24px;
+    border-color: #0A3871;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #0A3871;
+    padding: 24px;
+}
+
+.cancelButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #F3F5FC;
+}
+
+.beginButton{
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 800px;
+    right: 872px;
+    bottom: 72px;
+    left: 671px;
+    width: 197px;
+    height: 54px;
+    background: #478ce0;
+    border-style:none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 19px;
+}
+
+.beginButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #7fa7d8;
+}
+
+.goBackButton{
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 800px;
+    right: 872px;
+    bottom: 72px;
+    left: 878px;
+    width: 197px;
+    height: 54px;
+    background: #478ce0;
+    border-style:none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 19px;
+}
+
+.goBackButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #7fa7d8;
+}
+
+/*warning*/
+.warningLogo{
+    /*position*/
+    position: absolute;
+    top: 682px;
+    right: 1184px;
+    bottom: 156px;
+    left: 559px;
+}
+
+.letterWarning{
+    /*position*/
+    display: inline-block;
+    position: relative;
+    top: 660px;
+    left: 580px;
+    bottom: 155px;
+    right: 971px;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+    color: #495057;
+    opacity: 0.8;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
