@@ -23,17 +23,26 @@
 
         <img class="logo-alura" src="Imagenes-pagina/Logo alura.png">
 
-        <!--Pagina Home-->
+        <!--Home Page-->
         <div class="homePage">
 
             <!--buttons-->
-            <button class="start-button">Start</button>
-            <button class="add-word-button">Add a new word</button>
+            <button onclick="goGamePage()" class="start-button">Start</button>
+            <button onclick="goAddWordPage()" class="add-word-button">Add a new word</button>
+
+        </div>
+
+        <!--Game page-->
+        <div class="gamePage">
+
+            <!--buttons-->
+            <button class="newGameButton">New game</button>
+            <button onclick="goHomePage()" class="gameCancelButton">Cancel</button>
 
         </div>
 
         <!--Add new word page-->
-        <div class="add-word-page">
+        <div class="addWordPage">
 
             <form class="insertTextForm">
                 <input class="encryptInput" type="text" required>
@@ -48,10 +57,10 @@
             <div>
 
                 <button class="saveButton">Save</button>
-                <button onclick="cleanInput()" class="cancelButton">Cancel</button>
+                <button onclick="cleanInput()" class="cleanButton">Clean</button>
 
-                <button class="beginButton">Begin</button>
-                <button class="goBackButton">Go back</button>
+                <button onclick="goGamePage()" class="beginButton">Begin</button>
+                <button onclick="goHomePage()" class="goHomeButton">Go home</button>
             </div>
 
             <!--Warning-->

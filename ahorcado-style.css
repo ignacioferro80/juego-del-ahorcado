@@ -1,5 +1,5 @@
 body{
-    font-family: 'Montserrat', sans-serif;
+    background-color: #e6f0ff;
 }
 
 /*Alura logo*/
@@ -14,6 +14,7 @@ body{
     left: 40px;
     top: 40px;
 }
+
 
 /*Home Page*/
 .homePage{
@@ -74,7 +75,7 @@ body{
     margin:-371px auto;
     
     /* Dark blue/dark-blue-300 */
-    background: #D8DFE8;
+    background: #d5e6ff;
     border-radius: 24px;
 }
 
@@ -86,7 +87,91 @@ body{
     cursor:pointer;
 }
 
+
+/*Game Page*/
+.gamePage{
+    display:block;
+}
+
+.newGameButton{
+    /*button*/
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 708px;
+    right: 872px;
+    bottom: 72px;
+    left: 532px;
+    width: 328px;
+    height: 67px;
+    background: #0A3871;
+    border-style:none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 24px;
+}
+
+.newGameButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #609ED4;
+}
+
+.gameCancelButton{
+    /*button*/
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    top: 708px;
+    right: 520px;
+    bottom: 72px;
+    left: 889px;
+    width: 328px;
+    height: 67px;
+    background: #d5e6ff;
+    border-radius: 24px;
+    border-color: #0A3871;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #0A3871;
+    padding: 24px;
+}
+
+.gameCancelButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #F3F5FC;
+}
+
+
 /*Add new word page*/
+.addWordPage{
+    display:none;
+}
 
 /*input text*/
 .insertTextForm{
@@ -160,6 +245,7 @@ body{
     cursor:pointer;
 
     /*text*/
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -174,7 +260,7 @@ body{
     background-color: #609ED4;
 }
 
-.cancelButton{
+.cleanButton{
     /*button*/
     position: absolute;
     flex-direction: row;
@@ -187,7 +273,7 @@ body{
     left: 889px;
     width: 328px;
     height: 67px;
-    background: #D8DFE8;
+    background: #d5e6ff;
     border-radius: 24px;
     border-color: #0A3871;
     flex: none;
@@ -196,6 +282,7 @@ body{
     cursor:pointer;
 
     /*text*/
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -204,7 +291,7 @@ body{
     padding: 24px;
 }
 
-.cancelButton:hover{
+.cleanButton:hover{
     transition:0.5s;
     transform: scale(1.05);
     background-color: #F3F5FC;
@@ -231,6 +318,7 @@ body{
     cursor:pointer;
 
     /*text*/
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -245,7 +333,7 @@ body{
     background-color: #7fa7d8;
 }
 
-.goBackButton{
+.goHomeButton{
     position: absolute;
     flex-direction: row;
     align-items: flex-start;
@@ -266,6 +354,7 @@ body{
     cursor:pointer;
 
     /*text*/
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -274,7 +363,7 @@ body{
     padding-top: 19px;
 }
 
-.goBackButton:hover{
+.goHomeButton:hover{
     transition:0.5s;
     transform: scale(1.05);
     background-color: #7fa7d8;
@@ -299,6 +388,7 @@ body{
     bottom: 155px;
     right: 971px;
     
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
