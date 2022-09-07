@@ -18,7 +18,7 @@ body{
 
 /*Home Page*/
 .homePage{
-    display:none;
+    display:block;
 }
 
 /*Buttons*/
@@ -90,7 +90,13 @@ body{
 
 /*Game Page*/
 .gamePage{
-    display:block;
+    display:none;
+}
+
+/*Dibujo*/
+.pizarraDibujo{
+    position:relative;
+    right:500px;
 }
 
 .newGameButton{
