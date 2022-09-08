@@ -93,12 +93,20 @@ body{
     display:none;
 }
 
+/*Input game*/
+.testGameInput{
+    position: relative;
+    bottom: 300px;
+    right: 400px;
+}
+
 /*Dibujo*/
 .pizarraDibujo{
     position:relative;
     right:500px;
 }
 
+/*Buttons*/
 .newGameButton{
     /*button*/
     position: absolute;
@@ -390,7 +398,7 @@ body{
     display: inline-block;
     position: relative;
     top: 660px;
-    left: 580px;
+    left: 573px;
     bottom: 155px;
     right: 971px;
     
