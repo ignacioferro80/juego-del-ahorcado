@@ -62,6 +62,11 @@ function saveNewWord(){
         alert("Write a word to be used in the game!")
     }
 
+    else if(secretWordListAdded.includes(inputTexto.value)){
+        alert("Write something else! That word is already on the list")
+        inputTexto.value="";
+    }
+
     else {
         secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded)
         inputTexto.value="";
@@ -70,21 +75,33 @@ function saveNewWord(){
 
 function add_ToArray_(string, array){
     //adds the string given to the array given and returns the final array.
-    array.push([string])
+    array.push(string)
 
     return(array)
 }
 
 
 /*Game page*/
-// const keyboardInput = document.querySelector(".testGameInput")
+inputTexto.addEventListener("keyup", e=>{
 
-// keyboardInput.addEventListener("keyup", e=>{
-//     if(e.keyCode == 13){
-//         checkWord(keyboardInput.value)
-//         keyboardInput.value="";
-//     }
-// })
+    console.log(e)
+    
+    if(e.keyCode == 13){
+        secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded)
+        inputTexto.value="";
+        console.log(e)
+    }    
+    
+    else if(e.keyCode >= 48 && e.keyCode <= 57){
+        alert("You can not write digits!")
+        inputTexto.value="";
+    }
+
+    else if(e.keyCode >= 96 && e.keyCode <= 105){
+        alert("You can not write digits!")
+        inputTexto.value="";
+    }
+})
 
 // function checkWord(string) {
 //     //Given a string, it checks if its the same one as the randomly guessed in the array of words
