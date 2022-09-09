@@ -17,6 +17,11 @@ function goGamePage(){
 
     addWordPage.style.display = "none";
     homePage.style.display = "none";
+
+    //Game:
+    selectRandomWordIn(secretWordListAdded)
+    dibujarCanvas()
+    drawLinesForWord()
 }
 
 /*Go add word page button*/
@@ -47,9 +52,9 @@ function cleanInput() {
 
 //practice list:
 var secretWordListAdded = ["retro", "computer"];
+var secretWord = "";
 
 //Show list in console for verification:
-console.log(secretWordListAdded)
 
 function saveNewWord(){
     //This button saves the word written and adds it to the secretWordListAdded array. Otherwise it displays an alert.
@@ -70,41 +75,41 @@ function add_ToArray_(string, array){
     return(array)
 }
 
-/*Secret word list*/
-    //Takes an array and picks a random element from it to return it.
-Array.prototype.sample = function(){
-    return this[Math.floor(Math.random()*this.length)];
-}
-
-
 
 /*Game page*/
-const keyboardInput = document.querySelector(".testGameInput")
+// const keyboardInput = document.querySelector(".testGameInput")
 
-keyboardInput.addEventListener("keyup", e=>{
-    if(e.keyCode == 13){
-        checkWord(keyboardInput.value)
-        keyboardInput.value="";
-    }
-})
+// keyboardInput.addEventListener("keyup", e=>{
+//     if(e.keyCode == 13){
+//         checkWord(keyboardInput.value)
+//         keyboardInput.value="";
+//     }
+// })
 
-function checkWord(string) {
-    //Given a string, it checks if its the same one as the randomly guessed in the array of words
+// function checkWord(string) {
+//     //Given a string, it checks if its the same one as the randomly guessed in the array of words
 
-    if(string == secretWordListAdded.sample()){
-        alert("You guessed the word!")
-    }
+//     if(string == selectRandomWordIn(secretWordListAdded)){
+//         alert("You guessed the word!")
+//     }
 
-    else{
-        alert("You did not guess, keep trying!")
-    }
+//     else{
+//         alert("You did not guess, keep trying!")
+//     }
 
+// }
+
+function selectRandomWordIn(array){
+    let word = array[Math.floor(Math.random() * array.length)]
+
+    secretWord = word
+    console.log(secretWord)
 }
 
-/*Dibujo*/
-var pantalla = document.querySelector("canvas"); //Pasamos los datos del canvas a JS
-var pincel = pantalla.getContext("2d");
+//Takes an array and picks a random element from it to return it:
+// Array.prototype.sample = function(){
+//     return this[Math.floor(Math.random()*this.length)];
+// }
 
-    // pincel.fillStyle = "darkblue"; 
-    // pincel.fillRect(500,500,200,400);
-;
+/*Dibujo*/
+var tablero = document.getElementById("forca").getContext("2d"); //Pasamos los datos del canvas a JS

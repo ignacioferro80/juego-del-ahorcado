@@ -115,9 +115,10 @@ body{
 }
 
 /*Dibujo*/
-.pizarraDibujo{
+#forca{
     position:relative;
-    right:500px;
+    left:100px;
+    bottom:100px;
 }
 
 /*Buttons*/
@@ -131,7 +132,7 @@ body{
     top: 708px;
     right: 872px;
     bottom: 72px;
-    left: 532px;
+    left: 712px;
     width: 328px;
     height: 67px;
     background: #0A3871;
