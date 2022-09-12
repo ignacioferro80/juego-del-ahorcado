@@ -30,6 +30,8 @@ function goAddWordPage(){
 
     gamePage.style.display = "none";
     homePage.style.display = "none";
+
+    inputTexto.focus();
 }
 
 /*Reload page button*/
@@ -43,6 +45,7 @@ const cleanButton = document.querySelector(".cleanButton");
 
 function cleanInput() {
     inputTexto.value="";
+    inputTexto.focus();
 }
 
 
@@ -60,16 +63,19 @@ function saveNewWord(){
     //This button saves the word written and adds it to the secretWordListAdded array. Otherwise it displays an alert.
     if(inputTexto.value==""){
         alert("Write a word to be used in the game!")
+        inputTexto.focus();
     }
 
     else if(secretWordListAdded.includes(inputTexto.value)){
         alert("Write something else! That word is already on the list")
         inputTexto.value="";
+        inputTexto.focus();
     }
 
     else {
         secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded)
         inputTexto.value="";
+        inputTexto.focus();
     }
 }
 
@@ -81,18 +87,10 @@ function add_ToArray_(string, array){
 }
 
 
-/*Game page*/
+/*Add new word page*/
 inputTexto.addEventListener("keyup", e=>{
-
-    console.log(e)
     
-    if(e.keyCode == 13){
-        secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded)
-        inputTexto.value="";
-        console.log(e)
-    }    
-    
-    else if(e.keyCode >= 48 && e.keyCode <= 57){
+    if(e.keyCode >= 48 && e.keyCode <= 57){
         alert("You can not write digits!")
         inputTexto.value="";
     }
@@ -116,6 +114,7 @@ inputTexto.addEventListener("keyup", e=>{
 
 // }
 
+/*Game page*/
 function selectRandomWordIn(array){
     let word = array[Math.floor(Math.random() * array.length)]
 

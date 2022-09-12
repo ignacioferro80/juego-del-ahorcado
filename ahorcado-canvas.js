@@ -3,7 +3,7 @@ function dibujarCanvas(){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.strokeStyle = "#8a3871";
+    tablero.strokeStyle = "#1a3250";
 
     tablero.beginPath();
     tablero.moveTo(650,500);
@@ -18,7 +18,7 @@ function drawLinesForWord(){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.strokeStyle = "#8a3871";
+    tablero.strokeStyle = "#1a3250";
 
     var anchura = 600/secretWord.length
     for(var i = 0; i < secretWord.length; i++){

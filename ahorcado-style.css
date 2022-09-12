@@ -1,9 +1,9 @@
 body{
-    background-color: #e6f0ff;
+    background-color: #ecfff8;
 }
 
 /*Alura logo*/
-.logo-alura{
+/* .logo-alura{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -13,12 +13,24 @@ body{
     position: absolute;
     left: 40px;
     top: 40px;
-}
+} */
 
 
 /*Home Page*/
 .homePage{
     display:block;
+}
+
+.title{
+    position: relative;
+    top: 381px;
+    left: 820px;
+    display: inline-block;
+
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 200%;
+    font-style: italic;
 }
 
 /*Buttons*/
@@ -42,7 +54,7 @@ body{
     margin:402px auto;
     
     /* Dark blue/dark-blue-300 */
-    background: #0A3871;
+    background: #154734;
     border-radius: 24px;
     border:none
 }
@@ -50,7 +62,7 @@ body{
 .start-button:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #609ED4;
+    background-color: #3c7a63;
 
     cursor:pointer;
 }
@@ -68,21 +80,22 @@ body{
     line-height: 22px;
     align-items: center;
     text-align: center;
-    color: #0A3871;
+    border-color: #3c7a63;
+    color:#3c7a63;
     
     width: 254px;
     height: 90px;
     margin:-371px auto;
     
     /* Dark blue/dark-blue-300 */
-    background: #d5e6ff;
+    background: #ecfff8;
     border-radius: 24px;
 }
 
 .add-word-button:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #F3F5FC;
+    background-color: #f0ffff;
 
     cursor:pointer;
 }
@@ -135,7 +148,7 @@ body{
     left: 712px;
     width: 328px;
     height: 67px;
-    background: #0A3871;
+    background: #154734;
     border-style:none;
     border-radius: 24px;
     flex: none;
@@ -156,7 +169,7 @@ body{
 .newGameButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #609ED4;
+    background-color: #3c7a63;
 }
 
 .gameCancelButton{
@@ -172,9 +185,10 @@ body{
     left: 889px;
     width: 328px;
     height: 67px;
-    background: #d5e6ff;
+    background: #ecfff8;
     border-radius: 24px;
-    border-color: #0A3871;
+    border-color: #3c7a63;
+    color:#3c7a63;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -193,7 +207,7 @@ body{
 .gameCancelButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #F3F5FC;
+    background-color: #f0ffff;
 }
 
 
@@ -265,7 +279,7 @@ body{
     left: 532px;
     width: 328px;
     height: 67px;
-    background: #0A3871;
+    background: #154734;
     border-style:none;
     border-radius: 24px;
     flex: none;
@@ -286,7 +300,7 @@ body{
 .saveButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #609ED4;
+    background-color: #3c7a63;
 }
 
 .cleanButton{
@@ -302,9 +316,10 @@ body{
     left: 889px;
     width: 328px;
     height: 67px;
-    background: #d5e6ff;
+    background: #ecfff8;
     border-radius: 24px;
-    border-color: #0A3871;
+    border-color: #3c7a63;
+    color:#3c7a63;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -323,7 +338,7 @@ body{
 .cleanButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #F3F5FC;
+    background-color: #f0ffff;
 }
 
 .beginButton{
@@ -338,7 +353,7 @@ body{
     left: 671px;
     width: 197px;
     height: 54px;
-    background: #478ce0;
+    background: #1a3250;
     border-style:none;
     border-radius: 24px;
     flex: none;
@@ -359,7 +374,7 @@ body{
 .beginButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #7fa7d8;
+    background-color: #336097;
 }
 
 .goHomeButton{
@@ -374,7 +389,7 @@ body{
     left: 878px;
     width: 197px;
     height: 54px;
-    background: #478ce0;
+    background: #1a3250;
     border-style:none;
     border-radius: 24px;
     flex: none;
@@ -395,7 +410,7 @@ body{
 .goHomeButton:hover{
     transition:0.5s;
     transform: scale(1.05);
-    background-color: #7fa7d8;
+    background-color: #336097;
 }
 
 /*warning*/
