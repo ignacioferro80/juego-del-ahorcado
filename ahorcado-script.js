@@ -20,6 +20,7 @@ function goGamePage(){
 
     //Game:
     selectRandomWordIn(secretWordListAdded)
+    //drawInvisibleWord() Writes the secret word in display:"none";
     dibujarCanvas()
     drawLinesForWord()
 }
@@ -99,6 +100,12 @@ inputTexto.addEventListener("keyup", e=>{
         alert("You can not write digits!")
         inputTexto.value="";
     }
+
+    else if(e.keyCode == 13){
+        saveNewWord()
+        inputTexto.value="";
+    }
+
 })
 
 // function checkWord(string) {
@@ -114,18 +121,75 @@ inputTexto.addEventListener("keyup", e=>{
 
 // }
 
+
 /*Game page*/
 function selectRandomWordIn(array){
     let word = array[Math.floor(Math.random() * array.length)]
 
     secretWord = word
-    console.log(secretWord)
 }
+
+const testLetterInput = document.querySelector(".testLetterInput");
+var guessedLetters = [];
+var notGuessedLetters = [];
+
+testLetterInput.addEventListener("keyup", e=>{
+    if(e.keyCode >= 48 && e.keyCode <= 57){
+        alert("You can not write digits!")
+        testLetterInput.value="";
+    }
+
+    else if(e.keyCode >= 96 && e.keyCode <= 105){
+        alert("You can not write digits!")
+        testLetterInput.value="";
+    }
+
+    else if(e.keyCode == 13){
+        testLetter()
+        testLetterInput.value="";
+    }
+    console.log(e);
+})
+
+function testLetter(){
+    /*Letter verification*/
+    if(secretWord.includes(testLetterInput.value)){
+        alertAndAddLetter_ToArray_IfNew(testLetterInput.value, guessedLetters)
+        testLetterInput.value="";
+    }
+
+    else {
+        alertNotGuessed_In_IfNew(testLetterInput.value, notGuessedLetters)
+        testLetterInput.value="";
+    }
+}
+
+function alertAndAddLetter_ToArray_IfNew(letter, array){
+    if(array.includes(letter)){
+        alert("You already tried this letter and it belongs!")
+    }
+
+    else{
+        alert("You guessed a letter!")
+        add_ToArray_(letter, array)
+    }
+}
+
+function alertNotGuessed_In_IfNew(letter, array){
+    if(array.includes(letter)){
+        alert("You already tried this letter and it does not belong!")
+    }
+
+    else{
+        alert("That letter is not in the secret word!")
+        add_ToArray_(letter, array)
+    }
+}
+
+/*Dibujo*/
+var tablero = document.getElementById("forca").getContext("2d"); //Pasamos los datos del canvas a JS
 
 //Takes an array and picks a random element from it to return it:
 // Array.prototype.sample = function(){
 //     return this[Math.floor(Math.random()*this.length)];
 // }
-
-/*Dibujo*/
-var tablero = document.getElementById("forca").getContext("2d"); //Pasamos los datos del canvas a JS

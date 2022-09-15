@@ -107,30 +107,71 @@ body{
 }
 
 /*Input game*/
-.testGameInput{
+.testLetterInput{
     position: relative;
-    bottom: 300px;
-    right: 436px;
+    bottom: 234px;
+    right: 359px;
 
     width: 200px;
 
     background: none; /*esconde el input*/
-    color:#609ED4;
+    color:#1a3250;
     padding-top: 20px;
     border:none;
-    border-bottom: 1px solid #0A3871;
+    border-bottom: 1px solid #3c7a63;
+    border-width: medium;
     outline:0;
 
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    font-size: 100%;
+    font-size: 150%;
     text-align: center;
+}
+
+::placeholder{
+    color:#154734;
+    font-size:90%;
+}
+
+.testLetterButton{
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    top: 598px;
+    right: 872px;
+    bottom: 72px;
+    left: 1068px;
+    width: 124px;
+    height: 46px;
+    background: #1a3250;
+    border-style:none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor:pointer;
+
+    /*text*/
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 4px;
+}
+
+.testLetterButton:hover{
+    transition:0.5s;
+    transform: scale(1.05);
+    background-color: #336097;
 }
 
 /*Dibujo*/
 #forca{
     position:relative;
-    left:100px;
+    left: 175px;
     bottom:100px;
 }
 
@@ -145,7 +186,7 @@ body{
     top: 708px;
     right: 872px;
     bottom: 72px;
-    left: 712px;
+    left: 791px;
     width: 328px;
     height: 67px;
     background: #154734;
