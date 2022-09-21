@@ -63,18 +63,24 @@ var secretWord = "";
 function saveNewWord(){
     //This button saves the word written and adds it to the secretWordListAdded array. Otherwise it displays an alert.
     if(inputTexto.value==""){
-        alert("Write a word to be used in the game!")
+        alert("Write a word to be used in the game!");
+        inputTexto.focus();
+    }
+
+    else if (inputTexto.value.length > 8){
+        alert("That word is too long! Try a word with 8 characters or less");
+        inputTexto.value="";
         inputTexto.focus();
     }
 
     else if(secretWordListAdded.includes(inputTexto.value)){
-        alert("Write something else! That word is already on the list")
+        alert("Write something else! That word is already on the list");
         inputTexto.value="";
         inputTexto.focus();
     }
 
     else {
-        secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded)
+        secretWordListAdded = add_ToArray_(inputTexto.value, secretWordListAdded);
         inputTexto.value="";
         inputTexto.focus();
     }
