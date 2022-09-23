@@ -108,7 +108,7 @@ body{
 /*Input game*/
 .testLetterInput{
     position: relative;
-    bottom: 234px;
+    bottom: 145px;
     right: 359px;
 
     width: 200px;
@@ -137,7 +137,7 @@ body{
     flex-direction: row;
     align-items: flex-start;
     gap: 8px;
-    top: 598px;
+    top: 687px;
     right: 872px;
     bottom: 72px;
     left: 1068px;
@@ -182,7 +182,7 @@ body{
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
-    top: 708px;
+    top: 807px;
     right: 872px;
     bottom: 72px;
     left: 791px;
