@@ -57,3 +57,136 @@ function writeIncorrectWord(letra, errorsLeft){
     tablero.fillText(secretWord[letra], 505+(anchura*letra), 620)//Posiciona la letra incorrecta en las lineas
     tablero.stroke()
 }
+
+/* Draw hangman with errors */
+function drawHanger() {
+
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(700,500);
+    tablero.lineTo(700,250);
+    tablero.stroke();
+    tablero.closePath();
+
+    tablero.beginPath();
+    tablero.moveTo(700,250);
+    tablero.lineTo(790,250);
+    tablero.stroke();
+    tablero.closePath();
+
+    tablero.beginPath();
+    tablero.moveTo(790,250);
+    tablero.lineTo(790,280);
+    tablero.stroke();
+    tablero.closePath();
+
+}
+
+function drawHead(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.moveTo(790,300);
+    tablero.arc(790,300,30,0,2*Math.PI);
+    tablero.fill();
+    tablero.closePath();
+}
+
+function drawBody() {
+
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(790,330);
+    tablero.lineTo(790,390);
+    tablero.stroke();
+    tablero.closePath();
+
+}
+
+function drawLeftLeg(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(790,390);
+    tablero.lineTo(770,430);
+    tablero.stroke();
+    tablero.closePath();
+
+}
+
+function drawRightLeg(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(790,390);
+    tablero.lineTo(810,430);
+    tablero.stroke();
+    tablero.closePath();
+}
+
+function drawLeftArm(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(790,330);
+    tablero.lineTo(770,370);
+    tablero.stroke();
+    tablero.closePath();
+}
+
+function drawRightArm(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(790,330);
+    tablero.lineTo(810,370);
+    tablero.stroke();
+    tablero.closePath();
+}
+
+function drawArrow(){
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.strokeStyle = "#1a3250";
+
+    tablero.beginPath();
+    tablero.moveTo(750,330);
+    tablero.lineTo(860,330);
+    tablero.stroke();
+    tablero.closePath();
+
+    tablero.beginPath();
+    tablero.moveTo(860,330);
+    tablero.lineTo(840,320);
+    tablero.stroke();
+    tablero.closePath();
+
+    tablero.beginPath();
+    tablero.moveTo(860,330);
+    tablero.lineTo(840,340);
+    tablero.stroke();
+    tablero.closePath();
+}

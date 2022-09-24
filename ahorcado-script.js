@@ -14,6 +14,7 @@ function goHomePage(){
 /*Go game button*/
 function goGamePage(){
     gamePage.style.display = "block";
+    testLetterInput.focus();
 
     addWordPage.style.display = "none";
     homePage.style.display = "none";
@@ -150,13 +151,24 @@ testLetterInput.addEventListener("keyup", e=>{
         testLetter()
         testLetterInput.value="";
     }
+
+    else if(testLetterInput.value.length >= 2) {
+        alert("You can only write single letters!")
+        testLetterInput.value="";
+    }
 })
 
 //Test letter
 function testLetter(){
 
+    if(errorsLeft == 0 || guessedLettersCount==secretWord.length){
+        alert("The game is over!")
+        testLetterInput.value="";
+    }
+    
+
     /*Letter verification*/
-    if(secretWord.includes(testLetterInput.value)){
+    else if(secretWord.includes(testLetterInput.value)){
         alertAndAddLetter_ToArray_IfNew(testLetterInput.value, guessedLetters)
         
         testLetterInput.value="";
@@ -167,8 +179,11 @@ function testLetter(){
 
         testLetterInput.value="";
     }
+
 }
 
+youWonText = document.querySelector(".youWon")
+youLostText = document.querySelector(".youLost")
 
 function alertAndAddLetter_ToArray_IfNew(letter, array){
     if(array.includes(letter)){
@@ -194,7 +209,7 @@ function verifyIfWonWith_In_OrWriteIt(letter){
         }
     }
     if(guessedLettersCount==secretWord.length){
-        alert("You won! Congrats :)")
+        youWonText.style.display = "inline-block";
     }
 }
 
@@ -207,20 +222,49 @@ function alertNotGuessed_In_IfNew(letter, array){
         //Update errors and write incorrect word
         errorsLeft = errorsLeft - 1
         writeIncorrectWord(letter, errorsLeft)
-        alert("You have " + errorsLeft + " errors left!")
+
+        //Draw hangman part
+        drawHangmanWith_Errors(errorsLeft)
         
         //Add to array of not guessed letters
         add_ToArray_(letter, array)
         
-        //Draw hangman part
-        drawHangmanWith_Errors(errorsLeft)
     }
 }
 
 function drawHangmanWith_Errors(errors) {
+
+    if(errors == 7){
+        drawHanger()
+    }
+
+    if(errors == 6){
+        drawHead()
+    }
+
+    if(errors == 5){
+        drawBody()
+    }
+
+    if(errors == 4){
+        drawLeftLeg()
+    }
+
+    if(errors == 3){
+        drawRightLeg()
+    }
+
+    if(errors == 2){
+        drawLeftArm()
+    }
+
+    if(errors == 1){
+        drawRightArm()
+    }
     
     if(errors==0){
-        alert("You lost! Better luck nex time :)")
+        drawArrow()
+        youLostText.style.display = "inline-block";
     }
     
 }
