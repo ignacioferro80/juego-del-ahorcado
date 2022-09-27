@@ -71,12 +71,6 @@ function saveNewWord(){
         inputTexto.focus();
     }
 
-    else if (inputTexto.value.length > 8){
-        alert("That word is too long! Try a word with 8 characters or less");
-        inputTexto.value="";
-        inputTexto.focus();
-    }
-
     else if(secretWordListAdded.includes(inputTexto.value)){
         alert("Write something else! That word is already on the list");
         inputTexto.value="";
@@ -101,22 +95,26 @@ function add_ToArray_(string, array){
 /*Add new word page*/
 inputTexto.addEventListener("keyup", e=>{
     
-    if(e.keyCode >= 48 && e.keyCode <= 57){
-        alert("You can not write digits!")
-        inputTexto.value="";
-    }
-
-    else if(e.keyCode >= 96 && e.keyCode <= 105){
-        alert("You can not write digits!")
-        inputTexto.value="";
-    }
-
-    else if(e.keyCode == 13){
+    if(e.keyCode == 13){
         saveNewWord()
         inputTexto.value="";
     }
 
+    else if( !(isLetter(e.keyCode)) && !(isWritingSymbol(e.keyCode))){
+        alert("You can not write digits or uppercase letters!")
+        inputTexto.value="";
+    }
+
 })
+
+function isLetter(key){
+    return(key >= 65 && key <= 90) 
+}
+
+function isWritingSymbol(key){
+            //Erase     //Shift     //Ctrl      //Ctrl+Shift     //f12
+    return(key == 8 || key == 16 || key == 17 || key == 37 || key == 123) 
+}
 
 
 /*Game page*/
@@ -134,25 +132,15 @@ var errorsLeft = 8;
 var guessedLettersCount = 0;
 
 testLetterInput.addEventListener("keyup", e=>{
-    if(e.keyCode >= 48 && e.keyCode <= 57){
-        alert("You can not write digits!")
-        testLetterInput.value="";
-    }
-
-    else if(e.keyCode >= 96 && e.keyCode <= 105){
-        alert("You can not write digits!")
-        testLetterInput.value="";
-    }
-
-    else if(e.keyCode == 13){
+    if(e.keyCode == 13){
         testLetter()
         testLetterInput.value="";
     }
-
-    else if(testLetterInput.value.length >= 2) {
-        alert("You can only write single letters!")
+    else if( !(isLetter(e.keyCode)) && !(isWritingSymbol(e.keyCode))){
+        alert("You can not write digits or uppercase letters!")
         testLetterInput.value="";
     }
+
 })
 
 //Test letter
@@ -163,7 +151,6 @@ function testLetter(){
         testLetterInput.value="";
     }
     
-
     /*Letter verification*/
     else if(secretWord.includes(testLetterInput.value)){
         alertAndAddLetter_ToArray_IfNew(testLetterInput.value, guessedLetters)
@@ -201,7 +188,7 @@ function verifyIfWonWith_In_OrWriteIt(letter){
     //Adds last word
     for(var i = 0; i < secretWord.length; i++){
         if(secretWord[i] == letter){
-            writeCorrectWord(i)
+            writeCorrectLetter(i)
             guessedLettersCount = guessedLettersCount + 1
         }
     }
@@ -218,7 +205,7 @@ function alertNotGuessed_In_IfNew(letter, array){
     else{
         //Update errors and write incorrect word
         errorsLeft = errorsLeft - 1
-        writeIncorrectWord(letter, errorsLeft)
+        writeIncorrectLetter(letter, errorsLeft)
 
         //Draw hangman part
         drawHangmanWith_Errors(errorsLeft)
@@ -230,7 +217,7 @@ function alertNotGuessed_In_IfNew(letter, array){
 }
 
 function drawHangmanWith_Errors(errors) {
-
+    
     if(errors == 7){
         drawHanger()
     }
@@ -262,23 +249,22 @@ function drawHangmanWith_Errors(errors) {
     if(errors==0){
         drawArrow()
         youLostText.style.display = "inline-block";
+
+        writeCompleteCorrectWord();
     }
     
 }
 
+function writeCompleteCorrectWord() {
+    for(var i = 0; i < secretWord.length; i++){
+        if(lettersWritten.includes(secretWord[i])){
+            writeCorrectLetter(i)
+        }
+        else{
+            writeCorrectLetterLeft(i)
+        }
+    }
+}
+
 /*Dibujo*/
 var tablero = document.getElementById("forca").getContext("2d"); //Pasamos los datos del canvas a JS
-
-//Takes an array and picks a random element from it to return it:
-// Array.prototype.sample = function(){
-    //     return this[Math.floor(Math.random()*this.length)];
-    // }
-    
-    //Test letter KEY
-    // function testLetterK(key){
-    //     if(key >= 65 && guessedLetters.indexOf(key) || key <= 90 && guessedLetters.indexOf(key)){
-    //         guessedLetters.push(key)
-    //         console.log(key)
-    //         return false
-    //     }
-    // }

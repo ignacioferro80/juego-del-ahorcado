@@ -33,7 +33,10 @@ function drawLinesForWord(){
 
 }
 
-function writeCorrectWord(index){
+//We create a variable so that we can se which letters we already guessed
+var lettersWritten = [];
+
+function writeCorrectLetter(index){
     tablero.font = "bold 52px Montserrat";
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
@@ -43,9 +46,23 @@ function writeCorrectWord(index){
     var anchura = 600/secretWord.length
     tablero.fillText(secretWord[index], 505+(anchura*index), 620) //Posiciona la letra correcta en las lineas
     tablero.stroke()
+
+    lettersWritten = add_ToArray_(secretWord[index], lettersWritten) //We save the ones that were correct.
 }
 
-function writeIncorrectWord(letra, errorsLeft){
+function writeCorrectLetterLeft(index){
+    tablero.font = "bold 52px Montserrat";
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "rgb(167 88 88)";
+
+    var anchura = 600/secretWord.length
+    tablero.fillText(secretWord[index], 505+(anchura*index), 620) //Posiciona la letra correcta en las lineas
+    tablero.stroke()
+}
+
+function writeIncorrectLetter(letra, errorsLeft){
     tablero.font = "bold 40px Montserrat";
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
