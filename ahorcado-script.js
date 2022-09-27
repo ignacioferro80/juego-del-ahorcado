@@ -149,6 +149,7 @@ function testLetter(){
     if(errorsLeft == 0 || guessedLettersCount==secretWord.length){
         alert("The game is over!")
         testLetterInput.value="";
+        testLetterInput.focus();
     }
     
     /*Letter verification*/
@@ -156,12 +157,14 @@ function testLetter(){
         alertAndAddLetter_ToArray_IfNew(testLetterInput.value, guessedLetters)
         
         testLetterInput.value="";
+        testLetterInput.focus();
     }
 
     else {
         alertNotGuessed_In_IfNew(testLetterInput.value, notGuessedLetters) 
 
         testLetterInput.value="";
+        testLetterInput.focus();
     }
 
 }
