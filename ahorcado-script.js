@@ -59,7 +59,7 @@ function cleanInput() {
 
 /*Save word button*/
 
-var secretWordListAdded = ["retro", "computer", "language", "search", "practice"];
+var secretWordListAdded = ["computer", "language", "search", "practice","straight","thursday","student","saturday","complete"];
 var secretWord = "";
 
 //Show list in console for verification:
